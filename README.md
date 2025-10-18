@@ -1,30 +1,50 @@
 # JS Streamoid
 
-## Project Overview
-JS Streamoid is a Node.js backend application that provides a simple API for managing and filtering product data from CSV files. It allows users to retrieve and filter products by category, price range, or other attributes. The project can be run locally or inside a Docker container, making it easy to deploy and test.
-
----
+JS Streamoid is a Node.js backend API for managing and filtering products from CSV files. It provides endpoints to get all products and filter them based on category and price range.
 
 ## Features
-- Read product data from `sample_products.csv`
-- Filter products by category, price range, or other attributes
-- RESTful API endpoints
-- Docker-ready for containerized deployment
 
----
+- Retrieve all products
+- Filter products by category
+- Filter products by price range
+- Dockerized for easy deployment
 
 ## Installation
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/AditiSharma21/js_streamoid.git
+1. Clone the repository:
+```
+git clone <repo-url>
 cd js_streamoid
+```
 
-## Docker & API Usage
+2. Install dependencies:
+```
+npm install
+```
 
-JS Streamoid can be run locally or inside a Docker container. Below are the steps to build, run, and use the API.
+3. Start the server:
+```
+npm start
+```
 
-Build Docker Image:
-```bash
+Server will run at `http://localhost:3000`.
+
+## API Endpoints
+
+- **GET /api/products** — Get all products
+- **GET /api/products/filter?category=Electronics&minPrice=500&maxPrice=1500** — Filter products
+
+## Docker
+
+Build and run using Docker:
+
+```
 docker build -t js_streamoid .
-GET /products
+docker run -p 3000:3000 js_streamoid
+```
+
+## CSV Data
+
+All product data is stored in `data/products.csv`. You can update this file to change the products.
+
+
