@@ -19,3 +19,12 @@ JS Streamoid is a Node.js backend application that provides a simple API for man
 ```bash
 git clone https://github.com/AditiSharma21/js_streamoid.git
 cd js_streamoid
+
+## Docker & API Usage
+
+JS Streamoid can be run locally or inside a Docker container. Below are the steps to build, run, and use the API.
+
+Build Docker Image:
+```bash
+docker build -t js_streamoid .
+GET /products
